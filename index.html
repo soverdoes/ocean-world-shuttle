@@ -1637,12 +1637,20 @@
 
   // 방향 아코디언 토글 (레벨1)
   function toggleDirection(header) {
-    header.closest('.direction-section').classList.toggle('open');
+    const current = header.closest('.direction-section');
+    current.parentElement.querySelectorAll('.direction-section.open').forEach(s => {
+      if (s !== current) s.classList.remove('open');
+    });
+    current.classList.toggle('open');
   }
 
   // 노선 아코디언 토글 (레벨2)
   function toggleRoute(header) {
-    header.closest('.route-section').classList.toggle('open');
+    const current = header.closest('.route-section');
+    current.parentElement.querySelectorAll('.route-section.open').forEach(s => {
+      if (s !== current) s.classList.remove('open');
+    });
+    current.classList.toggle('open');
   }
 </script>
 </body>
