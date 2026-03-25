@@ -46,20 +46,25 @@
     background: #fff;
     border-bottom: 2px solid #e5e7eb;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
+  .tab-bar::-webkit-scrollbar { display: none; }
   .tab-bar button {
-    flex: 1;
-    min-width: 100px;
-    padding: 14px 10px;
+    flex: 0 0 auto;
+    padding: 14px 16px;
     border: none;
     background: none;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     color: #888;
     cursor: pointer;
     position: relative;
     transition: color .2s;
     white-space: nowrap;
+  }
+  @media (min-width: 768px) {
+    .tab-bar button { flex: 1; font-size: 15px; }
   }
   .tab-bar button.active { color: #0066cc; }
   .tab-bar button.active::after {
@@ -326,35 +331,23 @@
   .day-toggle {
     display: flex;
     gap: 0;
-    padding: 16px 28px;
-    background: #fff;
-    border-bottom: 1px solid #e5e7eb;
   }
   .day-toggle button {
     flex: 1;
-    padding: 10px 0;
-    border: 2px solid #e5e7eb;
-    background: #fff;
-    font-size: 14px;
+    padding: 14px 0;
+    border: none;
+    background: #f0f0f0;
+    font-size: 15px;
     font-weight: 700;
     color: #888;
     cursor: pointer;
     transition: all .2s;
   }
-  .day-toggle button:first-child { border-radius: 8px 0 0 8px; border-right: none; }
-  .day-toggle button:last-child { border-radius: 0 8px 8px 0; }
   .day-toggle button.active {
-    background: #0066cc;
-    border-color: #0066cc;
+    background: #1a2332;
     color: #fff;
   }
-  .day-toggle button .date-sub {
-    display: block;
-    font-size: 11px;
-    font-weight: 500;
-    margin-top: 2px;
-    opacity: .7;
-  }
+  .day-toggle button .date-sub { display: none; }
   .day-panel { display: none; }
   .day-panel.active { display: block; }
 
@@ -392,8 +385,8 @@
   <!-- 탭 -->
   <div class="tab-bar" id="tabBar">
     <button class="active" data-tab="tab-may">5월 연휴</button>
-    <button data-tab="tab-jun1">6월 1차</button>
-    <button data-tab="tab-jun2">6월 2차</button>
+    <button data-tab="tab-jun1">6월 06일~21일</button>
+    <button data-tab="tab-jun2">6월 22일~7월5일</button>
     <button data-tab="tab-peak">7·8월 성수기</button>
     <button data-tab="tab-aug1">8월 1차</button>
     <button data-tab="tab-aug2">8월 2차</button>
@@ -459,14 +452,9 @@
 
   <!-- ==================== 6월 1차 ==================== -->
   <div class="tab-content" id="tab-jun1">
-    <div class="season-header">
-      <span class="date-badge">2026.06.06 ~ 06.21</span>
-      <span class="info">6월 1차 노선</span>
-    </div>
-
     <div class="day-toggle" data-group="jun1">
-      <button class="active" data-panel="jun1-weekday">주중 (월~금)<span class="date-sub">06.08 ~ 06.19</span></button>
-      <button data-panel="jun1-weekend">주말 (토~일)<span class="date-sub">06.06 ~ 06.21</span></button>
+      <button class="active" data-panel="jun1-weekday">주중 (월~금) 노선</button>
+      <button data-panel="jun1-weekend">주말(토일) 노선</button>
     </div>
 
     <div class="day-panel active" id="jun1-weekday">
@@ -683,14 +671,9 @@
 
   <!-- ==================== 6월 2차 ==================== -->
   <div class="tab-content" id="tab-jun2">
-    <div class="season-header">
-      <span class="date-badge">2026.06.22 ~ 07.10</span>
-      <span class="info">6월 2차 노선</span>
-    </div>
-
     <div class="day-toggle" data-group="jun2">
-      <button class="active" data-panel="jun2-weekday">주중 (월~금)<span class="date-sub">06.22 ~ 07.10</span></button>
-      <button data-panel="jun2-weekend">주말 (토~일)<span class="date-sub">06.27 ~ 07.05</span></button>
+      <button class="active" data-panel="jun2-weekday">주중 (월~금) 노선</button>
+      <button data-panel="jun2-weekend">주말(토일) 노선</button>
     </div>
 
     <div class="day-panel active" id="jun2-weekday">
@@ -1690,6 +1673,9 @@
       tab.querySelectorAll('.day-panel').forEach(p => p.classList.remove('active'));
       const panel = document.getElementById(btn.dataset.panel);
       panel.classList.add('active');
+      panel.querySelectorAll('.direction-section.open, .route-section.open').forEach(s => s.classList.remove('open'));
+      const first = panel.querySelector('.direction-section:not(.return)');
+      if (first) first.classList.add('open');
     });
   });
 
