@@ -424,6 +424,62 @@
   <!-- ==================== 6월 1차 ==================== -->
   <div class="tab-content" id="tab-jun1">
     <div class="season-header">
+      <span class="date-badge">2026.06.08 ~ 06.19</span>
+      <span class="info">주중 <strong>(월~금)</strong> 노선</span>
+    </div>
+
+    <div class="direction-section">
+      <div class="direction-header" onclick="toggleDirection(this)">
+        <span class="dir-name"><span class="arrow-icon">→</span> 서울 → 오션월드</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <div class="direction-body">
+        <div class="route-section">
+          <div class="route-header" onclick="toggleRoute(this)">
+            <span class="route-name">홍대/건대노선</span>
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="route-body">
+            <div class="stop-list">
+              <div class="stop-item"><div class="stop-timeline"><div class="stop-dot"></div><div class="stop-line"></div></div><div class="stop-info"><div class="stop-name">홍대</div><div class="time-badges"><span class="time-badge">07:00</span></div></div><div class="stop-action"><button class="btn-location">📍 위치보기</button></div></div>
+              <div class="stop-item"><div class="stop-timeline"><div class="stop-dot"></div><div class="stop-line"></div></div><div class="stop-info"><div class="stop-name">건대입구</div><div class="time-badges"><span class="time-badge">08:00</span></div></div><div class="stop-action"><button class="btn-location">📍 위치보기</button></div></div>
+              <div class="stop-item"><div class="stop-timeline"><div class="stop-dot dest"></div></div><div class="stop-info"><div class="stop-name">오션월드</div></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="route-section">
+          <div class="route-header" onclick="toggleRoute(this)">
+            <span class="route-name">사당/종합노선</span>
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="route-body">
+            <div class="stop-list">
+              <div class="stop-item"><div class="stop-timeline"><div class="stop-dot"></div><div class="stop-line"></div></div><div class="stop-info"><div class="stop-name">사당</div><div class="time-badges"><span class="time-badge">07:20</span></div></div><div class="stop-action"><button class="btn-location">📍 위치보기</button></div></div>
+              <div class="stop-item"><div class="stop-timeline"><div class="stop-dot"></div><div class="stop-line"></div></div><div class="stop-info"><div class="stop-name">종합운동장</div><div class="time-badges"><span class="time-badge">08:00</span></div></div><div class="stop-action"><button class="btn-location">📍 위치보기</button></div></div>
+              <div class="stop-item"><div class="stop-timeline"><div class="stop-dot dest"></div></div><div class="stop-info"><div class="stop-name">오션월드</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="direction-section return">
+      <div class="direction-header" onclick="toggleDirection(this)">
+        <span class="dir-name"><span class="arrow-icon">→</span> 오션월드 → 서울</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </div>
+      <div class="direction-body">
+        <div class="return-list">
+          <div class="return-item">
+            <span class="return-time">17:00</span>
+            <span class="return-route">오션월드 <span class="arrow">→</span> 전지역</span>
+            <span class="return-period">06.08 ~ 06.19</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="season-header" style="margin-top: 16px;">
       <span class="date-badge">2026.06.06 ~ 06.21</span>
       <span class="info">주말 <strong>(토~일)</strong> 노선</span>
     </div>
@@ -434,7 +490,6 @@
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
       </div>
       <div class="direction-body">
-        <!-- 홍대/건대 -->
         <div class="route-section">
           <div class="route-header" onclick="toggleRoute(this)">
             <span class="route-name">홍대/건대노선</span>
@@ -466,7 +521,6 @@
           </div>
         </div>
 
-        <!-- 목동/영등포 -->
         <div class="route-section">
           <div class="route-header" onclick="toggleRoute(this)">
             <span class="route-name">목동/영등포노선</span>
@@ -498,7 +552,6 @@
           </div>
         </div>
 
-        <!-- 사당/종합 -->
         <div class="route-section">
           <div class="route-header" onclick="toggleRoute(this)">
             <span class="route-name">사당/종합노선</span>
@@ -530,7 +583,6 @@
           </div>
         </div>
 
-        <!-- 의정부/노원 -->
         <div class="route-section">
           <div class="route-header" onclick="toggleRoute(this)">
             <span class="route-name">의정부/노원/구리노선</span>
@@ -583,62 +635,6 @@
             <span class="return-time">17:00</span>
             <span class="return-route">오션월드 <span class="arrow">→</span> 전지역</span>
             <span class="return-period">06.06 ~ 06.21</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="season-header" style="margin-top: 16px;">
-      <span class="date-badge">2026.06.08 ~ 06.19</span>
-      <span class="info">주중 <strong>(월~금)</strong> 노선</span>
-    </div>
-
-    <div class="direction-section">
-      <div class="direction-header" onclick="toggleDirection(this)">
-        <span class="dir-name"><span class="arrow-icon">→</span> 서울 → 오션월드</span>
-        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-      </div>
-      <div class="direction-body">
-        <div class="route-section">
-          <div class="route-header" onclick="toggleRoute(this)">
-            <span class="route-name">홍대/건대노선</span>
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="route-body">
-            <div class="stop-list">
-              <div class="stop-item"><div class="stop-timeline"><div class="stop-dot"></div><div class="stop-line"></div></div><div class="stop-info"><div class="stop-name">홍대</div><div class="time-badges"><span class="time-badge">07:00</span></div></div><div class="stop-action"><button class="btn-location">📍 위치보기</button></div></div>
-              <div class="stop-item"><div class="stop-timeline"><div class="stop-dot"></div><div class="stop-line"></div></div><div class="stop-info"><div class="stop-name">건대입구</div><div class="time-badges"><span class="time-badge">08:00</span></div></div><div class="stop-action"><button class="btn-location">📍 위치보기</button></div></div>
-              <div class="stop-item"><div class="stop-timeline"><div class="stop-dot dest"></div></div><div class="stop-info"><div class="stop-name">오션월드</div></div></div>
-            </div>
-          </div>
-        </div>
-        <div class="route-section">
-          <div class="route-header" onclick="toggleRoute(this)">
-            <span class="route-name">사당/종합노선</span>
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="route-body">
-            <div class="stop-list">
-              <div class="stop-item"><div class="stop-timeline"><div class="stop-dot"></div><div class="stop-line"></div></div><div class="stop-info"><div class="stop-name">사당</div><div class="time-badges"><span class="time-badge">07:20</span></div></div><div class="stop-action"><button class="btn-location">📍 위치보기</button></div></div>
-              <div class="stop-item"><div class="stop-timeline"><div class="stop-dot"></div><div class="stop-line"></div></div><div class="stop-info"><div class="stop-name">종합운동장</div><div class="time-badges"><span class="time-badge">08:00</span></div></div><div class="stop-action"><button class="btn-location">📍 위치보기</button></div></div>
-              <div class="stop-item"><div class="stop-timeline"><div class="stop-dot dest"></div></div><div class="stop-info"><div class="stop-name">오션월드</div></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="direction-section return">
-      <div class="direction-header" onclick="toggleDirection(this)">
-        <span class="dir-name"><span class="arrow-icon">→</span> 오션월드 → 서울</span>
-        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-      </div>
-      <div class="direction-body">
-        <div class="return-list">
-          <div class="return-item">
-            <span class="return-time">17:00</span>
-            <span class="return-route">오션월드 <span class="arrow">→</span> 전지역</span>
-            <span class="return-period">06.08 ~ 06.19</span>
           </div>
         </div>
       </div>
@@ -1301,7 +1297,7 @@
 
     <div class="direction-section">
       <div class="direction-header" onclick="toggleDirection(this)">
-        <span class="dir-name"><span class="arrow-icon">→</span> 서울 → 오션월드</span>
+        <span class="dir-name"><span class="arrow-icon">→</span> 서울/경기/인천 → 오션월드</span>
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
       </div>
       <div class="direction-body">
@@ -1429,7 +1425,7 @@
 
     <div class="direction-section return">
       <div class="direction-header" onclick="toggleDirection(this)">
-        <span class="dir-name"><span class="arrow-icon">→</span> 오션월드 → 서울</span>
+        <span class="dir-name"><span class="arrow-icon">→</span> 오션월드 → 서울/경기/인천</span>
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
       </div>
       <div class="direction-body">
